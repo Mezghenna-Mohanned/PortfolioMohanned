@@ -11,21 +11,32 @@ interface SkillBarProps {
 
 const SkillBar: React.FC<SkillBarProps> = ({ skill, showLabel = true }) => {
   return (
-    <div className="mb-5">
+    <div className="mb-6 group">
       {showLabel && (
-        <div className="flex justify-between items-center mb-2">
+        <div className="flex justify-between items-center mb-3">
           <div className="flex items-center space-x-3">
-            {skill.icon && <span className="text-lg">{skill.icon}</span>}
-            <span className="font-medium text-gray-200">{skill.name}</span>
+            {skill.icon && (
+              <span className="text-xl group-hover:scale-110 transition-transform">
+                {skill.icon}
+              </span>
+            )}
+            <span className="font-rajdhani font-semibold text-gray-200 group-hover:text-accent-gold transition-colors">
+              {skill.name}
+            </span>
           </div>
-          <span className="text-sm font-medium gradient-text">{skill.level}%</span>
+          <span className="font-orbitron text-sm font-bold gradient-text">
+            {skill.level}%
+          </span>
         </div>
       )}
-      <div className="h-2 bg-gray-800/50 rounded-full overflow-hidden">
+      <div className="h-2.5 bg-white/5 rounded-full overflow-hidden border border-white/10">
         <div 
-          className="h-full bg-gradient-to-r from-primary-500 to-cyan-400 rounded-full transition-all duration-1000"
+          className="h-full bg-gradient-to-r from-accent-gold to-accent-blue rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
           style={{ width: `${skill.level}%` }}
-        />
+        >
+          {/* Animated shine effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse-slow"></div>
+        </div>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ const Education: React.FC = () => {
   }));
 
   return (
-    <Section id="education" title="Formation & Études" subtitle="Parcours académique">
+    <Section id="education" title="Education" subtitle="Academic Journey">
       <div className="max-w-4xl mx-auto">
         <Timeline items={timelineItems} />
       </div>

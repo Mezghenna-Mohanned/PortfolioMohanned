@@ -10,22 +10,22 @@ const Skills: React.FC = () => {
       title: "Frontend",
       skills: skills.filter(skill => skill.category === 'frontend'),
       icon: "🎨",
-      color: "from-blue-500 to-cyan-400"
+      color: "from-accent-blue to-cyan-400"
     },
     {
       title: "Backend",
       skills: skills.filter(skill => skill.category === 'backend'),
       icon: "⚙️",
-      color: "from-purple-500 to-pink-400"
+      color: "from-accent-gold to-yellow-400"
     },
     {
-      title: "Outils & Technologies",
+      title: "Tools & Tech",
       skills: skills.filter(skill => skill.category === 'tools'),
       icon: "🛠️",
       color: "from-green-500 to-emerald-400"
     },
     {
-      title: "Langages de Programmation",
+      title: "Languages",
       skills: skills.filter(skill => skill.category === 'language'),
       icon: "💻",
       color: "from-orange-500 to-red-400"
@@ -33,17 +33,20 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <Section id="skills" title="Compétences" subtitle="Expertises techniques">
+    <Section id="skills" title="Skills" subtitle="Technical Expertise">
       <div className="grid md:grid-cols-2 gap-8">
         {skillCategories.map((category, index) => (
-          <Card key={index}>
-            <div className="flex items-center space-x-3 mb-6">
-              <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${category.color} flex items-center justify-center`}>
-                <span className="text-xl">{category.icon}</span>
+          <Card key={index} glowEffect>
+            <div className="flex items-center space-x-4 mb-6">
+              <div className={`relative w-14 h-14 rounded-lg bg-gradient-to-br ${category.color} flex items-center justify-center rotate-45`}>
+                <span className="text-2xl -rotate-45">{category.icon}</span>
+                <div className={`absolute inset-0 rounded-lg bg-gradient-to-br ${category.color} blur-lg opacity-50`}></div>
               </div>
               <div>
-                <h3 className="text-xl font-bold">{category.title}</h3>
-                <p className="text-sm text-gray-400">{category.skills.length} compétences</p>
+                <h3 className="font-orbitron text-xl font-bold">{category.title}</h3>
+                <p className="text-sm text-gray-400 font-rajdhani">
+                  {category.skills.length} skills
+                </p>
               </div>
             </div>
             
@@ -58,8 +61,8 @@ const Skills: React.FC = () => {
       
       {/* Additional Skills */}
       <div className="mt-12">
-        <Card>
-          <h3 className="text-xl font-bold mb-6">Autres Compétences</h3>
+        <Card glowEffect>
+          <h3 className="font-orbitron text-xl font-bold mb-6">Additional Skills</h3>
           <div className="flex flex-wrap gap-3">
             {[
               "Agile/Scrum", "REST APIs", "GraphQL", "Microservices", 
@@ -68,7 +71,7 @@ const Skills: React.FC = () => {
             ].map((skill, index) => (
               <span
                 key={index}
-                className="px-4 py-2 bg-gray-800/30 rounded-full text-sm hover:bg-gray-800/50 transition-colors"
+                className="px-5 py-2.5 bg-white/5 rounded-lg text-sm font-rajdhani font-semibold hover:bg-white/10 border border-white/10 hover:border-accent-gold/30 hover:text-accent-gold transition-all"
               >
                 {skill}
               </span>

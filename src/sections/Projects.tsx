@@ -5,7 +5,7 @@ import { projects } from '../data/portfolioData';
 
 const Projects: React.FC = () => {
   return (
-    <Section id="projects" title="Projets" subtitle="Réalisations récentes">
+    <Section id="projects" title="Projects" subtitle="Recent Work">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
@@ -15,10 +15,10 @@ const Projects: React.FC = () => {
       <div className="mt-12 text-center">
         <a
           href="#"
-          className="inline-flex items-center space-x-2 px-6 py-3 glass-morphism rounded-lg font-semibold hover-lift"
+          className="inline-flex items-center space-x-3 px-8 py-4 glass-morphism rounded-lg font-orbitron font-bold hover-lift border border-white/10 hover:border-accent-gold/50 group transition-all"
         >
-          <span>Voir tous les projets</span>
-          <i className="fas fa-arrow-right"></i>
+          <span className="group-hover:text-accent-gold transition-colors">VIEW ALL PROJECTS</span>
+          <i className="fas fa-arrow-right text-accent-gold group-hover:translate-x-2 transition-transform"></i>
         </a>
       </div>
     </Section>

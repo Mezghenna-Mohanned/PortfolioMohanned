@@ -14,7 +14,7 @@ const Experience: React.FC = () => {
   }));
 
   return (
-    <Section id="experience" title="Expérience Professionnelle" subtitle="Parcours professionnel">
+    <Section id="experience" title="Experience" subtitle="Professional Journey">
       <div className="max-w-4xl mx-auto">
         <Timeline items={timelineItems} />
       </div>
