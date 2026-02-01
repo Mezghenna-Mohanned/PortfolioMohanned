@@ -1,122 +1,182 @@
 import React from 'react';
 import Section from '../components/Section';
-import Card from '../components/Card';
-import { aboutInfo, languages } from '../data/portfolioData';
 
 const About: React.FC = () => {
+  const languages = [
+    { name: "Arabic", proficiency: "Native", code: "AR" },
+    { name: "French", proficiency: "Fluent", code: "FR" },
+    { name: "English", proficiency: "Fluent", code: "EN" },
+  ];
+
   return (
     <Section id="about" title="About Me" subtitle="Who I Am">
-      <div className="grid lg:grid-cols-2 gap-8">
-        {/* Left Column */}
-        <div className="space-y-8">
-          <Card glowEffect>
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-gold to-accent-blue rounded-lg blur-lg opacity-50"></div>
-                  <div className="relative w-16 h-16 rounded-lg bg-gradient-to-br from-accent-gold to-accent-blue flex items-center justify-center">
-                    <i className="fas fa-user text-white text-2xl"></i>
-                  </div>
+      <div className="max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8">
+
+          {/* Terminal Window - Main Info */}
+          <div className="group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div className="relative bg-black/80 backdrop-blur-xl border border-orange-500/20 rounded-xl overflow-hidden hover:border-orange-500/40 transition-all duration-300">
+              {/* Terminal Header */}
+              <div className="bg-gradient-to-r from-orange-950/50 to-black/50 px-4 py-3 border-b border-orange-500/20 flex items-center space-x-2">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 </div>
-                <div>
-                  <h3 className="font-orbitron text-2xl font-bold">{aboutInfo.name}</h3>
-                  <p className="text-gray-400 font-rajdhani text-lg">{aboutInfo.title}</p>
-                </div>
+                <span className="font-space-mono text-xs text-orange-400/60 ml-4">~/about/mezghenna.sh</span>
               </div>
-              
-              <p className="text-gray-300 leading-relaxed font-rajdhani text-lg">
-                {aboutInfo.description}
-              </p>
-              
-              <div className="pt-6 border-t border-white/10">
-                <p className="text-xl font-orbitron font-semibold gradient-text mb-4">{aboutInfo.tagline}</p>
-                <div className="space-y-3 text-sm text-gray-400">
-                  <div className="flex items-center space-x-3 font-rajdhani">
-                    <i className="fas fa-map-marker-alt text-accent-gold"></i>
-                    <span>{aboutInfo.location}</span>
+
+              {/* Terminal Content */}
+              <div className="p-6 font-space-mono text-sm space-y-4">
+                <div className="flex items-start space-x-2">
+                  <span className="text-orange-500 flex-shrink-0">$</span>
+                  <span className="text-gray-400">cat identity.txt</span>
+                </div>
+
+                <div className="pl-4 space-y-3 text-gray-300">
+                  <div>
+                    <span className="text-orange-400">name:</span>
+                    <span className="text-white ml-2 font-semibold">Mezghenna Mohanned</span>
                   </div>
-                  <div className="flex items-center space-x-3 font-rajdhani">
-                    <i className="fas fa-envelope text-accent-blue"></i>
-                    <span>{aboutInfo.email}</span>
+                  <div>
+                    <span className="text-orange-400">role:</span>
+                    <span className="text-white ml-2">Software Engineering Student</span>
                   </div>
+                  <div>
+                    <span className="text-orange-400">year:</span>
+                    <span className="text-white ml-2">4th Year @ USTHB</span>
+                  </div>
+                  <div>
+                    <span className="text-orange-400">location:</span>
+                    <span className="text-white ml-2">Algiers, Algeria</span>
+                  </div>
+                  <div>
+                    <span className="text-orange-400">email:</span>
+                    <span className="text-cyan-400 ml-2">mezh2911@gmail.com</span>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-2 pt-4">
+                  <span className="text-orange-500 flex-shrink-0">$</span>
+                  <span className="text-gray-400">cat mission.txt</span>
+                </div>
+
+                <div className="pl-4 text-gray-300 leading-relaxed">
+                  <p className="text-white/90">
+                    I love creating <span className="text-orange-400 font-semibold">algorithms</span> that help build
+                    <span className="text-orange-400 font-semibold"> solutions</span>. I enjoy everything about
+                    <span className="text-orange-400 font-semibold"> Artificial Intelligence</span> and its potential
+                    to transform the way we solve problems.
+                  </p>
+                </div>
+
+                <div className="flex items-center space-x-2 pt-2 animate-pulse">
+                  <span className="text-orange-500">$</span>
+                  <span className="text-gray-400">_</span>
                 </div>
               </div>
             </div>
-          </Card>
-          
-          <div className="grid grid-cols-2 gap-4">
-            <Card hoverEffect={false} glowEffect>
-              <div className="text-center">
-                <div className="text-4xl font-orbitron font-black gradient-text mb-2">3+</div>
-                <div className="text-sm text-gray-400 font-rajdhani font-semibold">Years Experience</div>
-              </div>
-            </Card>
-            <Card hoverEffect={false} glowEffect>
-              <div className="text-center">
-                <div className="text-4xl font-orbitron font-black gradient-text mb-2">25+</div>
-                <div className="text-sm text-gray-400 font-rajdhani font-semibold">Projects Done</div>
-              </div>
-            </Card>
           </div>
-        </div>
-        
-        {/* Right Column */}
-        <div className="space-y-8">
-          <Card glowEffect>
-            <h3 className="font-orbitron text-xl font-bold mb-6">Languages</h3>
-            <div className="space-y-6">
-              {languages.map((language) => (
-                <div key={language.id} className="flex items-center justify-between group">
-                  <div className="flex items-center space-x-4">
-                    <span className="text-3xl group-hover:scale-110 transition-transform">{language.flag}</span>
-                    <div>
-                      <div className="font-rajdhani font-bold text-lg">{language.name}</div>
-                      <div className="text-sm text-gray-500 font-space-mono">{language.level}</div>
-                    </div>
-                  </div>
-                  <div className="flex space-x-1.5">
-                    {[1, 2, 3, 4, 5].map((level) => (
-                      <div 
-                        key={level}
-                        className={`w-2.5 h-2.5 rounded-full transition-all ${
-                          level <= 
-                          (language.level === 'Langue maternelle' ? 5 : 
-                           language.level === 'Courant' ? 4 : 
-                           language.level === 'Intermédiaire' ? 3 : 2)
-                            ? 'bg-gradient-to-r from-accent-gold to-accent-blue shadow-lg' 
-                            : 'bg-gray-700/50'
-                        }`}
-                      />
+
+          {/* Terminal Window - Languages */}
+          <div className="group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <div className="relative bg-black/80 backdrop-blur-xl border border-orange-500/20 rounded-xl overflow-hidden hover:border-orange-500/40 transition-all duration-300">
+              {/* Terminal Header */}
+              <div className="bg-gradient-to-r from-orange-950/50 to-black/50 px-4 py-3 border-b border-orange-500/20 flex items-center space-x-2">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <span className="font-space-mono text-xs text-orange-400/60 ml-4">~/languages/config.json</span>
+              </div>
+
+              {/* Terminal Content */}
+              <div className="p-6 font-space-mono text-sm space-y-4">
+                <div className="flex items-start space-x-2">
+                  <span className="text-orange-500 flex-shrink-0">$</span>
+                  <span className="text-gray-400">cat languages.json</span>
+                </div>
+
+                <div className="pl-4">
+                  <div className="text-gray-400">{'{'}</div>
+                  <div className="pl-4 space-y-3 py-2">
+                    {languages.map((lang, index) => (
+                      <div key={index} className="group/lang">
+                        <div className="flex items-start space-x-2">
+                          <span className="text-cyan-400">"{lang.code}":</span>
+                          <span className="text-gray-400">{'{'}</span>
+                        </div>
+                        <div className="pl-4 space-y-1 text-gray-300">
+                          <div>
+                            <span className="text-orange-400">"language":</span>
+                            <span className="text-green-400 ml-2">"{lang.name}"</span>,
+                          </div>
+                          <div>
+                            <span className="text-orange-400">"proficiency":</span>
+                            <span className="text-green-400 ml-2">"{lang.proficiency}"</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-gray-400">{'}'}</span>
+                          {index < languages.length - 1 && <span className="text-gray-400">,</span>}
+                        </div>
+                      </div>
                     ))}
                   </div>
+                  <div className="text-gray-400">{'}'}</div>
                 </div>
-              ))}
-            </div>
-          </Card>
-          
-          <Card glowEffect>
-            <h3 className="font-orbitron text-xl font-bold mb-6">Interests</h3>
-            <div className="flex flex-wrap gap-3">
-              {[
-                { icon: '🎸', label: 'Music' },
-                { icon: '📚', label: 'Reading' },
-                { icon: '✈️', label: 'Travel' },
-                { icon: '🏋️‍♂️', label: 'Fitness' },
-                { icon: '🎮', label: 'Gaming' },
-                { icon: '🎨', label: 'Design' },
-                { icon: '🍳', label: 'Cooking' },
-                { icon: '🎬', label: 'Cinema' },
-              ].map((hobby, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center justify-center px-5 py-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-accent-gold/30 transition-all group"
-                >
-                  <span className="text-2xl mb-2 group-hover:scale-110 transition-transform">{hobby.icon}</span>
-                  <span className="text-xs text-gray-300 font-rajdhani font-semibold">{hobby.label}</span>
+
+                <div className="flex items-start space-x-2 pt-4 border-t border-orange-500/10">
+                  <span className="text-orange-500 flex-shrink-0">$</span>
+                  <span className="text-gray-400">echo "Communication: Multilingual"</span>
                 </div>
-              ))}
+
+                <div className="pl-4 text-green-400">
+                  Communication: Multilingual ✓
+                </div>
+
+                <div className="flex items-center space-x-2 pt-2 animate-pulse">
+                  <span className="text-orange-500">$</span>
+                  <span className="text-gray-400">_</span>
+                </div>
+              </div>
             </div>
-          </Card>
+          </div>
+        </div>
+
+        {/* System Status Bar */}
+        <div className="mt-8 relative group">
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-transparent rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+          <div className="relative bg-black/60 backdrop-blur-xl border border-orange-500/20 rounded-lg px-6 py-4 hover:border-orange-500/40 transition-all">
+            <div className="flex flex-wrap items-center justify-between gap-4 font-space-mono text-xs">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                <span className="text-gray-400">STATUS:</span>
+                <span className="text-green-400">ONLINE</span>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <span className="text-gray-400">MODE:</span>
+                <span className="text-orange-400">LEARNING</span>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <span className="text-gray-400">FOCUS:</span>
+                <span className="text-cyan-400">AI & ALGORITHMS</span>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <span className="text-gray-400">LOCATION:</span>
+                <span className="text-white">DZ/ALG</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </Section>
