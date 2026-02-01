@@ -11,9 +11,9 @@ const Hero: React.FC = () => {
     { name: 'git', image: '/images/git.png', delay: 1, position: 'top-1/3 left-10', rotate: 'animate-spin-slow' },
     { name: 'Tensorflow', image: '/images/tensorflow.png', delay: 1.5, position: 'bottom-1/3 left-5', rotate: 'animate-spin-slow' },
     { name: 'C', image: '/images/C.png', delay: 2, position: 'bottom-1/4 right-12', rotate: 'animate-spin-slow' },
-    { name: ' Flask', image: '/images/Flask.png', delay: 2.5, position: 'top-1/2 right-2', rotate: 'animate-spin-slow' },
+    { name: ' CPP', image: '/images/CPP.png', delay: 2.5, position: 'top-1/2 right-2', rotate: 'animate-spin-slow' },
     { name: 'TypeScript', image: '/images/Typescript.png', delay: 3, position: 'top-20 left-12', rotate: 'animate-spin-slow' },
-    { name: 'SQL', image: '/images/SQL.png', delay: 3.5, position: 'bottom-20 left-8', rotate: 'animate-spin-slow' },
+    { name: 'SQL', image: '/images/sql.png', delay: 3.5, position: 'bottom-20 left-8', rotate: 'animate-spin-slow' },
     ];
 
   return (
